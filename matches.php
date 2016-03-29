@@ -12,5 +12,3 @@
         <?php include 'bottom.html/bottom.html'; ?>
         </body>
 </html>
-
-''
