@@ -18,9 +18,11 @@
 				//parse for submitted person
 				for($i = 0; $i < count($singles); $i++)
 				{	
-					if($position = strpos($singles[$i], $_GET["Name"]) !== FALSE)
+					$position = strpos($singles[$i], $_GET["Name"]);
+					if($position !== FALSE)
 					{
 						$position = $i;
+						break;
 					}
 				}
 
@@ -54,12 +56,13 @@
 										$potType[2] == $subType[2] || $potType[3] == $subType[3])
 									{
 										//display image and match information
-										echo '<img src="user.jpg"/>';
+										//echo '<img src="user.jpg"/>';
 										echo nl2br("\n" . $potMatch[0]);
 										echo nl2br("\ngender: " . $potMatch[1]);
 										echo nl2br("\nage: " . $potMatch[2]);
 										echo nl2br("\ntype: " . $potMatch[3]);
 										echo nl2br("\nOS: " . $potMatch[4]);
+										
 									}
 								}
 							}
