@@ -4,8 +4,6 @@
         <body>
         <?php include 'top.html/top.html'; ?>
         <?php
-                echo "<b>" . "Matches for " . htmlspecialchars($_GET["Name"]) . "</b>";
-
                 //generating matches
                 //first get submit values
                 $file = 'singles.txt';
@@ -25,6 +23,14 @@
 						break;
 					}
 				}
+				
+				if($position != $i)
+				{
+				echo nl2br("\nError: " . $_GET["Name"] . " not found");
+				exit();
+				}
+
+ 			   	echo "<b>" . "Matches for " . htmlspecialchars($_GET["Name"]) . "</b>";
 
 				$submit = $singles[$position];
 				$submitValues = explode("," , $submit);
