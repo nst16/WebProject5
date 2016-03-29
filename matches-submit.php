@@ -13,6 +13,13 @@
 				$position = FALSE;
 				$i = 0;
 
+				//check if no name in text box
+				if($_GET["Name"] == "")
+				{
+					echo nl2br("\nError: cannot leave name blank");
+					exit();
+				}
+
 				//parse for submitted person
 				for($i = 0; $i < count($singles); $i++)
 				{	

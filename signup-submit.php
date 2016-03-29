@@ -54,6 +54,11 @@
 
 		//personality type must contain correct letters
 	$letters = str_split($_POST["PersonalityType"]);
+	if(count($letters) != 4)
+	{
+		echo "Error: Invalid personality type";
+		exit();
+	}
 	if($letters[0] != 'I' && $letters[0] != 'E')
 	{
 		if($letters[1] != 'S' && $letters[1] != 'N')
@@ -77,13 +82,13 @@
 	}
 
 		//min/max age must be valid
-	if($_POST["MinAge"] < 0)
+	if($_POST["MinAge"] < 0 || $_POST["MinAge"] == "")
 	{
 		echo "Error: Invalid minimum age";
 		exit();
 	}
 
-	if($_POST["MaxAge"] > 99)
+	if($_POST["MaxAge"] > 99 || $_POST["MaxAge"] == "")
 	{
 		echo "Error: Invalid maximum age";
 		exit();
