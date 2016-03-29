@@ -15,7 +15,13 @@
 		// Open the file to get existing content
 		$current = file_get_contents($file);
 		// Append a new person to the file
-		$current .= htmlspecialchars($_POST["Name"]) . "\n";
+		$current .= "\n" . htmlspecialchars($_POST["Name"]) . ",";
+		$current .= htmlspecialchars($_POST["Gender"]) . ",";
+		$current .= htmlspecialchars($_POST["Age"]) . ",";
+		$current .= htmlspecialchars($_POST["PersonalityType"]) . ",";
+		$current .= htmlspecialchars($_POST["FavoriteOS"]) . ",";
+		$current .= htmlspecialchars($_POST["MinAge"]) . ",";
+		$current .= htmlspecialchars($_POST["MaxAge"]);
 		// Write the contents back to the file
 		file_put_contents($file, $current);
 	?>
