@@ -4,7 +4,7 @@
         <body>
         <?php include 'top.html/top.html'; ?>
         <?php
-                echo 'Matches for ' . htmlspecialchars($_GET["Name"]);
+                echo "<b>" . "Matches for " . htmlspecialchars($_GET["Name"]) . "</b>";
 
                 //generating matches
                 //first get submit values
@@ -55,14 +55,24 @@
 									if($potType[0] == $subType[0] || $potType[1] == $subType[1] ||
 										$potType[2] == $subType[2] || $potType[3] == $subType[3])
 									{
-										//display image and match information
-										//echo '<img src="user.jpg"/>';
-										echo nl2br("\n" . $potMatch[0]);
-										echo nl2br("\ngender: " . $potMatch[1]);
-										echo nl2br("\nage: " . $potMatch[2]);
-										echo nl2br("\ntype: " . $potMatch[3]);
-										echo nl2br("\nOS: " . $potMatch[4]);
-										
+										//display image and match name in a <p>
+										//display match information in an <ul>
+										?> 
+										<div class="match"> 
+											<p>
+										 	   	<?
+												echo '<img src="user.jpg" class="match"/>'; 
+												echo $potMatch[0];
+												?> 
+											</p>
+											<ul class="match">
+												<li> <? echo "<b>" . "gender: " . "</b>". $potMatch[1]; ?> </li>
+												<li> <? echo "<b>" . "age: " . "</b>" . $potMatch[2]; ?> </li>
+												<li> <? echo "<b>" . "type: " . "</b>" . $potMatch[3]; ?> </li>
+												<li> <? echo "<b>" . "OS: " . "</b>" . $potMatch[4]; ?> </li>
+											</ul>
+										</div> 
+										<?
 									}
 								}
 							}
@@ -73,6 +83,3 @@
 	<?php include 'bottom.html/bottom.html'; ?>
         </body>
 </html>
-
-
-
