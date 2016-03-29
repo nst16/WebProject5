@@ -6,6 +6,12 @@
 	<?php
 		//validate the submitted input
 	
+		//check if name is blank
+	if($_POST["Name"] == "")
+	{
+		echo "Error: Name cannot be blank.";
+		exit();
+	}
 		//check if name already exists
 		//first get submit values
 		$file = 'singles.txt';
@@ -29,13 +35,6 @@
 	if($position == $i)
 	{
 		echo "Error: " . $_POST["Name"] . " already has an account";
-		exit();
-	}
-
-		//check if name is blank
-	if($_POST["Name"] == "")
-	{
-		echo "Error: Name cannot be blank.";
 		exit();
 	}
 

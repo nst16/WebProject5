@@ -8,7 +8,7 @@
 	  <fieldset> <legend>New User Signup:</legend>
             Name:<input type="text" maxlength="16" name="Name"> <br>
             Gender:<input type="radio" name="Gender" value="M"> Male
-            <input type="radio" name="Gender" value="F"> Female <br>
+            <input type="radio" name="Gender" value="F" checked="checked"> Female <br>
             Age: <input type="text" name="Age" size="6" maxlength="2"> <br>
             Personality Type: <input type="text" size="6" maxlength="4" name="PersonalityType"> (<a href=http://www.humanmetrics.com/cgi-win/JTypes2.asp">Don't know your type?</a>) <br>
             Favorite OS:  <select name="FavoriteOS">
